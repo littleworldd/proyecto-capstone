@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hospedaje Rural Pirque</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#inicio"><img src="assets/logo.png" alt="Hospedaje Rural Pirque"></a>
+  <nav>
+    <a href="#cabanas" data-i18n="nav1"></a>
+    <a href="#experiencia" data-i18n="nav2"></a>
+    <a href="#talleres" data-i18n="nav3"></a>
+    <a href="#resenas" data-i18n="nav4"></a>
+  </nav>
+  <select class="lang" id="langSel" aria-label="Idioma / Language / Idioma">
+    <option value="es">Español (Latino)</option>
+    <option value="en">English</option>
+    <option value="pt">Português</option>
+  </select>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <h1 data-i18n="h1"></h1>
+    <p data-i18n="sub"></p>
+    <form class="search" id="search" onsubmit="return false">
+      <label><span data-i18n="fin"></span><input type="date" id="dIn"></label>
+      <label><span data-i18n="fout"></span><input type="date" id="dOut"></label>
+      <label><span data-i18n="fg"></span><input type="number" id="guests" min="1" max="12" value="2"></label>
+      <button class="go" id="goBtn" data-i18n="check"></button>
+      <div class="extras">
+        <b data-i18n="incl"></b>
+        <label><input type="checkbox" id="xl"> <span data-i18n="lunch"></span></label>
+        <label><input type="checkbox" id="xd"> <span data-i18n="dinner"></span></label>
+      </div>
+    </form>
+  </section>
+
+  <section id="cabanas" class="sec">
+    <h2 data-i18n="cabT"></h2><p class="lead" data-i18n="cabS"></p>
+    <div class="grid" id="cabins"></div>
+  </section>
+
+  <section id="experiencia" class="sec band">
+    <h2 data-i18n="expT"></h2>
+    <div class="grid four" id="feats"></div>
+  </section>
+
+  <section id="talleres" class="sec">
+    <h2 data-i18n="talT"></h2><p class="lead" data-i18n="talS"></p>
+    <div class="grid" id="talls"></div>
+  </section>
+
+  <section class="sec band">
+    <h2 data-i18n="nearT"></h2>
+    <ul class="chips" id="near"></ul>
+    <div class="map"><span>🗺️</span><div><h3 data-i18n="mapT"></h3><p data-i18n="mapS"></p></div></div>
+  </section>
+
+  <section id="resenas" class="sec">
+    <h2 data-i18n="revT"></h2>
+    <div class="grid" id="revs"></div>
+    <form class="rform" id="rform">
+      <h3 data-i18n="rvForm"></h3>
+      <label><span data-i18n="rvName"></span><input id="rName" maxlength="30" required></label>
+      <label><span data-i18n="rvCountry"></span><select id="rCountry" required></select></label>
+      <fieldset class="rate"><legend data-i18n="rvStars"></legend><div class="starsin"><input type="radio" name="rate" id="s5" value="5" required><label for="s5" aria-label="5">★</label><input type="radio" name="rate" id="s4" value="4" required><label for="s4" aria-label="4">★</label><input type="radio" name="rate" id="s3" value="3" required><label for="s3" aria-label="3">★</label><input type="radio" name="rate" id="s2" value="2" required><label for="s2" aria-label="2">★</label><input type="radio" name="rate" id="s1" value="1" required><label for="s1" aria-label="1">★</label></div></fieldset>
+      <label class="wide"><span data-i18n="rvText"></span><textarea id="rText" maxlength="300" rows="4" required></textarea></label>
+      <button class="go" id="rSend" data-i18n="rvSend"></button>
+      <p id="rMsg" role="status"></p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <img src="assets/logo.png" alt="" height="56">
+  <p data-i18n="foot"></p>
+  <a class="go" id="waBtn" target="_blank" rel="noopener" data-i18n="wa"></a>
+  <a class="ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/Hospedaje+Rural+Pirque" data-i18n="maps"></a>
+</footer>
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="mbox">
+    <h3 id="mTitle" data-i18n="rvCheck"></h3>
+    <p data-i18n="rvCheckS"></p>
+    <div id="mPrev"></div>
+    <div class="mbtns"><button class="ghost" id="mEdit" data-i18n="rvEdit"></button><button class="go" id="mOk" data-i18n="rvPost"></button></div>
+  </div>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
