@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hospedaje Rural Pirque</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="lslot" id="langSlot"><div class="langbox" id="langBox">
+    <select id="langSel" hidden aria-hidden="true" tabindex="-1">
+      <option value="es">Español (México)</option>
+      <option value="en">English</option>
+      <option value="pt">Português</option>
+    </select>
+    <button type="button" class="lbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="langList" aria-label="Idioma / Language / Idioma">
+      <svg class="lglobe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+      <img class="lflag" id="langFlag" src="https://flagcdn.com/w40/mx.png" alt="" width="22" height="22">
+      <span id="langCur">Español</span>
+      <svg class="lchev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <ul class="llist" id="langList" role="listbox" aria-label="Idioma / Language / Idioma">
+      <li role="none" style="--i:0"><button type="button" role="option" data-v="es" aria-selected="true"><img class="lflag" src="https://flagcdn.com/w40/mx.png" alt="" width="22" height="22"><span><b>Español (México)</b><small>Latinoamérica</small></span><svg class="lck" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></li>
+      <li role="none" style="--i:1"><button type="button" role="option" data-v="en" aria-selected="false"><img class="lflag" src="https://flagcdn.com/w40/us.png" alt="" width="22" height="22"><span><b>English</b><small>International</small></span><svg class="lck" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></li>
+      <li role="none" style="--i:2"><button type="button" role="option" data-v="pt" aria-selected="false"><img class="lflag" src="https://flagcdn.com/w40/br.png" alt="" width="22" height="22"><span><b>Português</b><small>Brasil</small></span><svg class="lck" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></li>
+    </ul>
+  </div></div>
+  <nav aria-label="Principal">
+    <a href="#cabanas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><span data-i18n="nav1"></span></a>
+    <a href="#experiencia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-5 6-8 10-10"/></svg><span data-i18n="nav2"></span></a>
+    <a href="#talleres"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12C12 8 9 6 5 6c0 4 3 6 7 6z"/><path d="M12 14c0-3 2-5 6-5 0 3-2 5-6 5z"/></svg><span data-i18n="nav3"></span></a>
+    <a href="#cerca"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.5-6-11a6 6 0 0112 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg><span data-i18n="nav5"></span></a>
+    <a href="#resenas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg><span data-i18n="nav4"></span></a>
+  </nav>
+  <a class="go cta" href="#search" data-i18n="navBook"></a>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="herofade" aria-hidden="true"></div>
+    <h1 class="herologo"><img src="assets/logo.png" alt="Hospedaje Rural Pirque"></h1>
+    <p data-i18n="sub"></p>
+    <form class="search" id="search" onsubmit="return false" novalidate>
+      <div class="st st-d">
+        <span class="sl"><i>1</i><span id="bkWhen"></span></span>
+        <button type="button" class="dbtn" id="dBtn" aria-expanded="false" aria-controls="cal"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span id="dVal"></span></button>
+        <input type="hidden" id="dIn"><input type="hidden" id="dOut">
+      </div>
+      <div class="st st-g">
+        <span class="sl"><i>2</i><span id="bkWho"></span></span>
+        <div class="stp"><button type="button" id="gMinus">&minus;</button><output id="gVal" aria-live="polite"></output><button type="button" id="gPlus">+</button></div>
+        <input type="hidden" id="guests" value="2">
+      </div>
+      <div class="st st-m">
+        <span class="sl"><i>3</i><span id="bkMeals"></span></span>
+        <div class="meals">
+          <label class="mp"><input type="checkbox" id="xl"><span data-i18n="lunch"></span></label>
+          <label class="mp"><input type="checkbox" id="xd"><span data-i18n="dinner"></span></label>
+        </div>
+        <small id="bkBf"></small>
+      </div>
+      <button class="go" id="goBtn" data-i18n="check"></button>
+      <div class="cal" id="cal" hidden></div>
+      <p class="sum" id="sSum" role="status"></p>
+    </form>
+  </section>
+
+  <section id="cabanas" class="sec">
+    <h2 data-i18n="cabT"></h2><p class="lead" data-i18n="cabS"></p>
+    <div class="grid" id="cabins"></div>
+  </section>
+
+  <section id="experiencia" class="sec band">
+    <h2 data-i18n="expT"></h2>
+    <div class="grid four" id="feats"></div>
+  </section>
+
+  <section id="talleres" class="sec">
+    <h2 data-i18n="talT"></h2><p class="lead" data-i18n="talS"></p>
+    <div class="grid" id="talls"></div>
+  </section>
+
+  <section id="cerca" class="sec band">
+    <h2 data-i18n="nearT"></h2>
+    <p class="lead nearhint" id="nearHint"></p>
+    <ul class="chips" id="near"></ul>
+    <div class="map"><div><h3 data-i18n="mapT"></h3><p data-i18n="mapS"></p></div><iframe title="Hospedaje Rural Pirque - Google Maps" src="https://maps.google.com/maps?q=-33.6386552,-70.5670472&amp;z=17&amp;hl=es&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><a class="ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Hospedaje+Rural+Pirque/@-33.6387966,-70.5670644,19z/data=!4m9!3m8!1s0x9662d62e148fccb7:0xb6ca24f08763980d!5m2!4m1!1i2!8m2!3d-33.6386552!4d-70.5670472!16s%2Fg%2F11c2pb7t8r" data-i18n="maps"></a></div>
+  </section>
+
+  <section id="resenas" class="sec">
+    <h2 data-i18n="revT"></h2>
+    <div class="revwrap">
+    <div class="grid" id="revs" tabindex="0"></div>
+    <form class="rform" id="rform">
+      <h3 data-i18n="rvForm"></h3>
+      <label><span data-i18n="rvName"></span><input id="rName" maxlength="30" required></label>
+      <label><span data-i18n="rvCountry"></span><select id="rCountry" required></select></label>
+      <fieldset class="rate"><legend data-i18n="rvStars"></legend><div class="starsin"><input type="radio" name="rate" id="s5" value="5" required><label for="s5" aria-label="5">★</label><input type="radio" name="rate" id="s4" value="4" required><label for="s4" aria-label="4">★</label><input type="radio" name="rate" id="s3" value="3" required><label for="s3" aria-label="3">★</label><input type="radio" name="rate" id="s2" value="2" required><label for="s2" aria-label="2">★</label><input type="radio" name="rate" id="s1" value="1" required><label for="s1" aria-label="1">★</label></div></fieldset>
+      <label class="wide"><span data-i18n="rvText"></span><textarea id="rText" maxlength="300" rows="4" required></textarea></label>
+      <button class="go" id="rSend" data-i18n="rvSend"></button>
+      <p id="rMsg" role="status"></p>
+    </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="fwrap">
+    <img class="flogo" src="assets/logo.png" alt="Hospedaje Rural Pirque">
+    <div class="fside">
+      <p data-i18n="foot"></p>
+      <div class="fbtns"><a class="go" id="waBtn" target="_blank" rel="noopener" data-i18n="wa"></a><a class="ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Hospedaje+Rural+Pirque/@-33.6387966,-70.5670644,19z/data=!4m9!3m8!1s0x9662d62e148fccb7:0xb6ca24f08763980d!5m2!4m1!1i2!8m2!3d-33.6386552!4d-70.5670472!16s%2Fg%2F11c2pb7t8r" data-i18n="maps"></a></div>
+    </div>
+  </div>
+</footer>
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="mbox">
+    <h3 id="mTitle" data-i18n="rvCheck"></h3>
+    <p data-i18n="rvCheckS"></p>
+    <div id="mPrev"></div>
+    <div class="mbtns"><button class="ghost" id="mEdit" data-i18n="rvEdit"></button><button class="go" id="mOk" data-i18n="rvPost"></button></div>
+  </div>
+</div>
+<div class="dim" id="dim"></div>
+<div class="ndim" id="ndim"></div>
+<div class="chat" id="chat" role="dialog" aria-labelledby="chT">
+  <div class="chead"><span class="av" aria-hidden="true">🏡</span><div><b id="chT" data-i18n="chT"></b><small data-i18n="chSub"></small></div><button type="button" class="cx" id="chClose">&times;</button></div>
+  <div class="cbody"><p class="bub" data-i18n="chHi"></p></div>
+  <form class="cform" id="chForm"><textarea id="chIn" rows="1" maxlength="500"></textarea><button class="csend" id="chSend" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button></form>
+</div>
+<button type="button" class="wafab" id="waFab" aria-expanded="false" aria-controls="chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
+<div class="deco deco-l" aria-hidden="true"></div>
+<div class="deco deco-r" aria-hidden="true"></div>
+<script src="js/main.js"></script>
+</body>
+</html>
